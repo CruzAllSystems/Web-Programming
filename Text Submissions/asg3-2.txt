@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>PHP Input 2</title>
+
+<style>
+
+body
+{
+    background: cyan;
+    
+}
+h1
+{
+    text-align: center;
+    
+}
+
+</style>
+
+</head>
+
+<body>
+
+<h1>Demographic Information</h1>
+
+<form method = "post" action = "<?php echo $_SERVER['PHP_SELF']; ?>">
+    
+    Full Name:
+    <input type = "text" name = "name">
+    Email:
+    <input type = "text" name = "email">
+    Address:
+    <input type = "text" name = "address">
+    <br><br>
+    Phone Number (no dashes):
+	<input type = "number" name = "number" min = "0" max = 	"9999999999">
+	
+	Classification:
+	<select name = "classification">
+	    
+	    <option value = "Freshman">Freshman</option>
+	    <option value = "Sophomore">Sophomore</option>
+	    <option value = "Junior">Junior</option>
+	    <option value = "Senior">Senior</option>
+	    
+	</select>
+	
+	<br><br><br>
+	
+	Courses:
+	<select name = "courses" size = "5" multiple>
+	    
+	    <option value = "Web Programming">Web Programming</option>
+	    <option value = "Computing Concepts 2">Computing Concepts 2</option>
+	    <option value = "Operating Systems">Operating Systems</option>
+	    <option value = "Programming Languages">Programming Languages</option>
+	    <option value = "Algorithims and Data Structures">Algorithims and Data Structures</option>
+	    
+	</select>
+	
+	<input type = "submit">
+    
+    
+    
+    
+</form>
+<br>
+
+<?php
+
+    $name = $_POST["name"];
+    $email = $_POST["email"];
+    $address = $_POST["address"];
+    $phonenumber = $_POST["number"];
+    $classification = $_POST["classification"];
+    $courses = $_POST["courses"];
+    
+    echo "Name is: "; echo $name; echo "<br>";
+    echo "Email is: "; echo $email; echo "<br>";
+    echo "Address is: "; echo $address; echo "<br>";
+    echo "Phone Number is: "; echo $phonenumber; echo "<br>";
+    echo "Classifcation is: "; echo $classification; echo "<br>";
+    echo "Courses are: "; echo $courses; echo "<br>";
+
+?>
+</body>
+</html>

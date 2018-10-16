@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>PHP Input 3</title>
+
+<style>
+
+body
+{
+    background: <?php echo $_POST["color1"]; ?>;
+    
+    
+}
+h1
+{
+    color: <?php echo $_POST["color2"]; ?>;
+    text-align: center;
+    
+}
+
+</style>
+
+</head>
+
+<body>
+
+<h1>Color Registration</h1>
+
+<form method = "post" action = "<?php echo $_SERVER['PHP_SELF']; ?>">
+    
+    Username:
+    <input type = "text" name = "username">
+    Password:
+    <input type = "password" name = "password">
+    <br>
+    Select Color 1:
+    <input type = "color" name = "color1">
+    <br>
+    Select Color 2:
+    <input type = "color" name = "color2">
+    <br>
+    
+    <input type = "submit">
+    
+</form>
+<br>
+
+<?php
+
+    $username = $_POST["username"];
+    $password = $_POST["password"];
+    
+    if(isset($_POST['username']))
+    {
+        echo "<h1>Congratulations </h1>"; echo "<h1> $username </h1> "; echo "<h1>you are registered!</h1>";
+        
+    }
+    
+    
+
+
+?>
+</body>
+</html>

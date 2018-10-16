@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>PHP Input 1</title>
+
+<style>
+
+body
+{
+	background-color: cyan;
+
+}
+h1
+{
+    text-align: center;
+    
+}
+
+</style>
+
+</head>
+
+<body>
+    
+
+<h1>Minimum, Maximum, and Average</h1>
+<p>Please enter three numbers between 0 and 100 below.</p>
+
+<form method = "post" action = "<?php echo $_SERVER['PHP_SELF']; ?>">
+
+	Quantity (between 0 and 100):
+	<input type = "number" name = "quantity1" min = "0" max = 	"100">
+	Quantity (between 0 and 100):
+	<input type = "number" name = "quantity2" min = "0" max = 	"100">
+	Quantity (between 0 and 100):
+	<input type = "number" name = "quantity3" min = "0" max = 	"100">
+	
+	<input type = "submit">
+
+
+
+</form>
+
+<p><br></p>
+
+<?php
+
+	$number1 = $_POST["quantity1"];
+	$number2 = $_POST["quantity2"];
+	$number3 = $_POST["quantity3"];
+
+	$min = 0;
+	if($number1 <= $number2 && $number1 <= $number3)
+	{
+		$min = $number1;
+	}
+	if($number2 <= $number1 && $number2 <= $number3)
+	{
+		$min = $number2;
+	}
+	if($number3 <= $number2 && $number3 <= $number1)
+	{
+		$min = $number3;
+	}
+
+	$max = 0;
+	if($number1 >= $number2 && $number1 >= $number3)
+	{
+		$max = $number1;
+	}
+	if($number2 >= $number1 && $number2 >= $number3)
+	{
+		$max = $number2;
+	}
+	if($number3 >= $number2 && $number3 >= $number1)
+	{
+		$max = $number3;
+	}
+
+	$average = ($number1 + $number2 + $number3) / 3;
+	$averageF = round($average, 2);
+	
+	echo "Minimum is: "; echo $min; echo "<br>";
+	echo "Maximum is: "; echo $max; echo "<br>";
+	echo "Average is: "; echo $averageF; echo "<br>";
+	
+
+?>
+
+
+
+</body>
+</html>

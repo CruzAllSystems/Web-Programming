@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Cruz's Personal Hompage</title>
+<style>
+
+body
+{
+	background-color: cyan;
+	background-image: url("images/dragonball.jpg");
+	background-repeat: repeat-x;
+	background-position: right top;
+	margin-top: 200px;
+
+}
+
+h1
+{
+	color: black;
+	text-align: center;
+
+}
+
+h2
+{
+	color: black;
+	text-align: center;
+
+}
+
+
+p
+{
+	color: yellow;
+	font-family: Times New Roman;
+	font-size: 20px;
+
+}
+
+</style>
+</head>
+
+<body>
+
+<h1>Cruz Chavez (Graduation Class of 2020)</h1>
+<h2><a href = "asg1.html">
+See my pervious webpage here!</a></h2> 
+
+<p>My interest in programming stems from a deep seeded interest in technology 
+in general.<br>
+Growing up I've always been interested in computers and video games, and have always
+been great at using and understanding such concepts.<br>
+This then carried over to high school, where I found my calling studying 
+computer programming<br> <a href = "https://docs.oracle.com/javase/7/docs/api/">
+and eventually becoming most proficient in Java</a>. <br>
+I hope to continue studying the field of computer science and understand as much <br>
+as I can about technology as a whole.</p>
+
+<img src = "images/wwe_logo.png" alt = "WWE" width = "100" height = "100">
+<a href = https://www.yugioh-card.com/en/>  
+<img src = "images/ygo.jpg" alt = "Yu-Gi-Oh" width = "100" height = "100">
+</a>
+
+
+
+</body>
+
+</html>

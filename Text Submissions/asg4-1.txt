@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>C^2 Model Speechlib</title>
+
+<style>
+body
+{
+    background-color: cyan;
+    
+}
+h1,h2
+{
+    color: maroon;
+    text-align: center;
+}
+p
+{
+    color: maroon;
+    
+}
+</style>
+
+</head>
+
+<body>
+
+<h1>C^2 Model Speechlib</h1>
+<a href = "http://cchavez4.create.stedwards.edu/asg4.php">Select another speech at any time :D <a>
+
+
+<form method = "post" action = "<?php echo $_SERVER['PHP_SELF']; ?>">
+    
+    Speech:
+    <select name = "speech">
+        
+        <option value = "MLK">I Have a Dream</option>
+        <option value = "Lincoln">Gettysburg</option>
+        <option value = "Cruzito">Blood in Blood Out</option>
+        
+    </select>
+    
+    <input type = "submit">
+    
+</form>
+<br>
+
+
+<?php
+    
+    $origSpeech = "";
+
+    if(isset($_POST["speech"]))
+    {
+        if($_POST["speech"] == "MLK")
+        {
+            $mlkSpeech = fopen("Files/MLK.txt","r");
+            $origSpeech = fread($mlkSpeech,filesize("Files/MLK.txt"));
+            fclose($mlkSpeech);
+            
+            echo "<h2>$origSpeech</h2>";
+            
+            echo "<form method = \"post\" action = \"asg4.php\">
+            
+            Noun:
+            <input type = \"text\" name = \"noun\">
+            
+            Belief:
+            <input type = \"text\" name = \"belief\">
+            
+            Adjective:
+            <input type = \"text\" name = \"adjective\">
+            
+            Place:
+            <input type = \"text\" name = \"place\">
+            
+            Group of People:
+            <input type = \"text\" name = \"group\">
+            
+            2nd Group of People:
+            <input type = \"text\" name = \"group2\">
+            
+            <input type = \"submit\">
+            
+            </form>";
+            
+            
+        }
+        
+        elseif($_POST["speech"] == "Lincoln")
+        {
+            $lincolnSpeech = fopen("Files/Lincoln.txt","r");
+            $origSpeech = fread($lincolnSpeech,filesize("Files/Lincoln.txt"));
+            fclose($lincolnSpeech);
+            
+            echo "<h2>$origSpeech</h2>";
+            
+            echo "<form method = \"post\" action = \"asg4.php\">
+            
+            Time:
+            <input type = \"text\" name = \"time\">
+            
+            Principal:
+            <input type = \"text\" name = \"principal\">
+            
+            Adjective:
+            <input type = \"text\" name = \"adjective\">
+            
+            Noun:
+            <input type = \"text\" name = \"place\">
+            
+            Reason:
+            <input type = \"text\" name = \"reason\">
+            
+            
+            <input type = \"submit\">
+            
+            </form>";
+            
+            
+        }
+        
+        elseif($_POST["speech"] == "Cruzito")
+        {
+            $cruzitoSpeech = fopen("Files/Cruzito.txt","r");
+            $origSpeech = fread($cruzitoSpeech,filesize("Files/Cruzito.txt"));
+            fclose($cruzitoSpeech);
+            
+            echo "<h2>$origSpeech</h2>";
+            
+            echo "<form method = \"post\" action = \"asg4.php\">
+            
+            Noun:
+            <input type = \"text\" name = \"noun\">
+            
+            Object:
+            <input type = \"text\" name = \"object\">
+            
+            Time:
+            <input type = \"text\" name = \"time\">
+            
+            Trait:
+            <input type = \"text\" name = \"trait\">
+            
+            Group:
+            <input type = \"text\" name = \"group\">
+            
+            Emotion:
+            <input type = \"text\" name = \"emotion\">
+            
+            <input type = \"submit\">
+            
+            </form>";
+            
+        }
+        
+    }
+
+?>
+</body>
+</html>
